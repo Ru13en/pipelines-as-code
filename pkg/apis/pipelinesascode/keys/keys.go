@@ -74,7 +74,9 @@ const (
 	GithubPrivateKey     = "github-private-key"
 	ResultsRecordSummary = "results.tekton.dev/recordSummaryAnnotations"
 
-	SpanContextAnnotation = "tekton.dev/pipelinerunSpanContext"
+	SpanContextAnnotation        = "tekton.dev/pipelinerunSpanContext"
+	BitbucketProjectKey          = pipelinesascode.GroupName + "/bitbucket-project-key"
+	BitbucketRequiredBuildParent = pipelinesascode.GroupName + "/bitbucket-required-build-parent"
 )
 
 var ParamsRe = regexp.MustCompile(`{{([^}]{2,})}}`)

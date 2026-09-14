@@ -116,3 +116,19 @@ Create a [`Repository` CR]({{< relref "/docs/guides/repository-crd" >}}) with th
 - You can only reference a user by the `ACCOUNT_ID` in the owner file.
 
 {{< /callout >}}
+
+## PipelineRuns with support for Required Builds
+
+Pipelines-as-Code supports Bitbucket Data Center required builds. Add the
+following annotation to a PipelineRun to associate it with a required build:
+
+```yaml
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  annotations:
+    pipelinesascode.tekton.dev/bitbucket-required-build-parent: parentuid
+```
+
+Pipelines-as-Code automatically adds required builds to the statuses reported
+back to Bitbucket.
